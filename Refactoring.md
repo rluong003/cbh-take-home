@@ -9,3 +9,7 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+Personally for me, a page of code is readable if it has a concise amount of lines of code, and if the page is styled/linted consistently.
+I removed the if(candidate) branch because the candidate variable is dependent on an input. If there is no input, then candidate will always be null. Therefore, I can move all the logic in the if(candidate) branch into the if(event) branch
+I used ternary operators because I wanted to bring down the lines of code. There's already a lot of if and else branching going on, so cutting these branches into a single line of code with a ternary makes the page more concise and overall more readable.
+Finally I set canadidate to null, just to initialize it to a type, so that I can do an early return statement if there is no input. I turned into into a single line if statement to reduce the lines of code.
